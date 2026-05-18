@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://listwithkavin.ca/</loc>              <changefreq>weekly</changefreq><priority>1.00</priority></url>
+  <url><loc>https://listwithkavin.ca/listings.html</loc>  <changefreq>daily</changefreq> <priority>0.95</priority></url>
+  <url><loc>https://listwithkavin.ca/neighborhoods.html</loc><changefreq>monthly</changefreq><priority>0.92</priority></url>
+  <url><loc>https://listwithkavin.ca/sellers.html</loc>   <changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://listwithkavin.ca/buyers.html</loc>    <changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://listwithkavin.ca/about.html</loc>     <changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://listwithkavin.ca/testimonials.html</loc><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://listwithkavin.ca/blog.html</loc>      <changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://listwithkavin.ca/blog-post.html</loc> <changefreq>monthly</changefreq><priority>0.60</priority></url>
+  <url><loc>https://listwithkavin.ca/contact.html</loc>   <changefreq>monthly</changefreq><priority>0.85</priority></url>
+</urlset>

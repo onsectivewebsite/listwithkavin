@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calgary Neighborhoods Guide — Aspen Woods, Beltline, Mahogany &amp; More | ListWithKavin.ca</title>
+  <meta name="description" content="Calgary's most-loved neighborhoods, decoded. Median prices, vibe, schools, lifestyle, and homes for sale in Aspen Woods, Beltline, Tuscany, Mahogany, Bridgeland, Inglewood, Elbow Park, and West Springs." />
+  <meta name="keywords" content="Calgary neighborhoods, Aspen Woods, Beltline condos, Mahogany lake, Bridgeland, Inglewood, Elbow Park, West Springs, Tuscany, Calgary real estate guide" />
+  <meta property="og:title" content="Calgary Neighborhoods Guide — ListWithKavin.ca" />
+  <meta property="og:description" content="Calgary's most-loved neighborhoods, decoded — by Kavin." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="og-image.svg" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <meta name="theme-color" content="#FAF6EF" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* Page-specific compass bar */
+    .hood-compass {
+      background: var(--white);
+      border-top: 1px solid var(--taupe);
+      border-bottom: 1px solid var(--taupe);
+      position: sticky;
+      top: 76px;
+      z-index: 50;
+    }
+    .hood-compass__inner {
+      display: flex; gap: 6px; overflow-x: auto;
+      padding: 14px 0;
+      scrollbar-width: thin;
+    }
+    .hood-compass a {
+      flex-shrink: 0;
+      padding: 10px 18px;
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--navy);
+      font-weight: 600;
+      border-radius: 22px;
+      transition: all .25s var(--ease);
+      border: 1px solid transparent;
+    }
+    .hood-compass a:hover { background: var(--cream); color: var(--bronze); }
+
+    /* Hood deep-dive block */
+    .hood-block {
+      padding: 100px 0;
+      border-bottom: 1px solid var(--taupe);
+      scroll-margin-top: 140px;
+    }
+    .hood-block:nth-child(even) { background: var(--cream); }
+    .hood-block__grid {
+      display: grid; grid-template-columns: 1fr 1.05fr;
+      gap: 70px; align-items: center;
+    }
+    .hood-block:nth-child(even) .hood-block__grid {
+      grid-template-columns: 1.05fr 1fr;
+      direction: rtl;
+    }
+    .hood-block:nth-child(even) .hood-block__grid > * { direction: ltr; }
+    .hood-block__media {
+      position: relative;
+      aspect-ratio: 5/6;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background-color: var(--taupe);
+      background-image: linear-gradient(180deg, rgba(26,41,64,.05), rgba(26,41,64,.4)), var(--photo, none);
+      background-size: cover;
+      background-position: center;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--taupe);
+    }
+    .hood-block__media::after {
+      content:''; position: absolute; inset: 16px;
+      border: 1px solid rgba(255,255,255,.25); pointer-events: none;
+    }
+    .hood-block__num {
+      position: absolute; top: 26px; left: 26px;
+      font-family: var(--serif);
+      font-size: 3.5rem; font-style: italic; font-weight: 400;
+      color: rgba(255,255,255,.85);
+      line-height: 1;
+    }
+    .hood-block h2 { font-size: clamp(2rem, 3.6vw, 2.8rem); }
+    .hood-block h2 em { color: var(--bronze); font-style: italic; }
+    .hood-block .vibe {
+      font-family: var(--serif); font-style: italic;
+      font-size: 1.2rem; color: var(--navy);
+      margin: 18px 0 24px;
+      border-left: 2px solid var(--gold);
+      padding-left: 18px;
+    }
+    .hood-block p { font-size: 1.02rem; line-height: 1.75; margin-bottom: 16px; opacity: .85; }
+    .hood-stats {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin: 30px 0;
+      border-top: 1px solid var(--taupe);
+      border-bottom: 1px solid var(--taupe);
+    }
+    .hood-stats__item {
+      padding: 18px 14px;
+      border-right: 1px solid var(--taupe);
+      text-align: left;
+    }
+    .hood-stats__item:last-child { border-right: 0; }
+    .hood-stats__item strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      color: var(--navy);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .hood-stats__item span {
+      font-size: .68rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .hood-block__best {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin: 18px 0 28px;
+    }
+    .hood-block__best span {
+      padding: 6px 14px;
+      background: var(--white);
+      border: 1px solid var(--taupe);
+      border-radius: 20px;
+      font-size: .78rem; color: var(--navy);
+      font-weight: 500;
+    }
+    .hood-block:nth-child(even) .hood-block__best span { background: var(--ivory); }
+    .hood-detail-list {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px 30px;
+      margin: 24px 0;
+    }
+    .hood-detail-list h4 {
+      font-family: var(--sans); font-size: .72rem;
+      letter-spacing: .25em; text-transform: uppercase;
+      color: var(--bronze); margin-bottom: 8px; font-weight: 600;
+    }
+    .hood-detail-list p { font-size: .92rem; margin: 0; opacity: 1; color: var(--charcoal); }
+    @media (max-width: 900px) {
+      .hood-block { padding: 70px 0; }
+      .hood-block__grid { grid-template-columns: 1fr; gap: 40px; }
+      .hood-block:nth-child(even) .hood-block__grid { direction: ltr; grid-template-columns: 1fr; }
+      .hood-stats { grid-template-columns: repeat(2, 1fr); }
+      .hood-stats__item:nth-child(2) { border-right: 0; }
+      .hood-stats__item:nth-child(-n+2) { border-bottom: 1px solid var(--taupe); }
+      .hood-detail-list { grid-template-columns: 1fr; }
+      .hood-compass { top: 70px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header is-solid">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo__mark">K</span>
+        <span class="logo__txt"><span>ListWithKavin</span><span>Calgary Real Estate</span></span>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="listings.html">Listings</a></li>
+        <li><a href="buyers.html">Buyers</a></li>
+        <li><a href="sellers.html">Sellers</a></li>
+        <li><a href="testimonials.html">Reviews</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav__cta">
+        <a href="sellers.html#valuation" class="btn btn--gold btn--sm">Get a Free Valuation</a>
+        <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="container page-head__inner">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Neighborhoods</div>
+      <h1>Calgary Neighborhoods, <em>Decoded</em>.</h1>
+      <p>Median prices, vibe, schools, lifestyle, and the streets locals actually want to live on — eight Calgary neighborhoods, by someone who has sold a home on most of them.</p>
+    </div>
+  </section>
+
+  <!-- Sticky compass -->
+  <nav class="hood-compass" aria-label="Jump to neighborhood">
+    <div class="container hood-compass__inner">
+      <a href="#aspen-woods">Aspen Woods</a>
+      <a href="#beltline">Beltline</a>
+      <a href="#tuscany">Tuscany</a>
+      <a href="#mahogany">Mahogany</a>
+      <a href="#bridgeland">Bridgeland</a>
+      <a href="#inglewood">Inglewood</a>
+      <a href="#elbow-park">Elbow Park</a>
+      <a href="#west-springs">West Springs</a>
+    </div>
+  </nav>
+
+  <!-- ASPEN WOODS -->
+  <article class="hood-block" id="aspen-woods">
+    <div class="container">
+      <div class="hood-block__grid">
+        <div class="hood-block__media reveal" style="--photo: url('https://picsum.photos/seed/lwk-hood-aspen-deep/900/1100');">
+          <span class="hood-block__num">01</span>
+        </div>
+        <div class="reveal delay-1">
+          <span class="eyebrow">SW Calgary · Luxury Estates</span>
+          <h2>Aspen Woods</h2>
+          <p class="vibe">Mountain-view modernism with a private-school commute and a champagne fridge in every kitchen.</p>
+          <p>Aspen Woods is where Calgary's executives and out-of-province transplants quietly settle. Stone facades, Wolf ranges, and three-car garages are table stakes. What makes it different is the calm — winding ridge streets, mature spruce, and direct access to Webber Academy, Calgary Academy, and Rundle College.</p>
+          <p>Resale value has outperformed the citywide average every year since 2019. Inventory is thin and rarely lasts. Off-market activity is significant here — many of Kavin's Aspen Woods buyers never see their winning home on MLS.</p>
+          <div class="hood-stats">
+            <div class="hood-stats__item"><strong>$1.4M</strong><span>Median</span></div>
+            <div class="hood-stats__item"><strong>$700K–$3.2M</strong><span>Range</span></div>
+            <div class="hood-stats__item"><strong>26</strong><span>Avg DOM</span></div>
+            <div class="hood-stats__item"><strong>22 min</strong><span>Downtown</span></div>
+          </div>
+          <div class="hood-block__best">
+            <span>Executive Families</span><span>Luxury Buyers</span><span>Private School Access</span>
+          </div>
+          <div class="hood-detail-list">
+            <div><h4>Top Streets</h4><p>Aspen Heights Drive · Aspen Glen Court · Aspen Cliff Court · Aspen Ridge Park</p></div>
+            <div><h4>Schools</h4><p>Webber Academy · Calgary Academy · Rundle College · Olympic Heights School</p></div>
+            <div><h4>Lifestyle</h4><p>Aspen Landing shops · Westside Rec Centre · Edworthy Park trails</p></div>
+            <div><h4>Heads-up</h4><p>Triple-pane and snowmelt driveways are now buyer expectations, not extras.</p></div>
+          </div>
+          <a href="listings.html" class="btn btn--gold">See Aspen Woods Listings</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- BELTLINE -->
+  <article class="hood-block" id="beltline">
+    <div class="container">
+      <div class="hood-block__grid">
+        <div class="hood-block__media reveal" style="--photo: url('https://picsum.photos/seed/lwk-hood-beltline-deep/900/1100');">
+          <span class="hood-block__num">02</span>
+        </div>
+        <div class="reveal delay-1">
+          <span class="eyebrow">Downtown · Urban Cool</span>
+          <h2>Beltline</h2>
+          <p class="vibe">Calgary's densest, most caffeinated neighborhood. Walk Score 98, and a different cocktail bar every Thursday.</p>
+          <p>Bounded by 17th Avenue's nightlife to the north and 11th Avenue's Mission-bound restaurants to the south, the Beltline is a condo dweller's playground. Towers like The Guardian, Park Point, and Royal stand on streets older Calgarians remember as walk-up apartments and industrial blocks.</p>
+          <p>For investors: the Beltline still delivers the city's most consistent rental yields. For owner-occupiers: pick your building carefully — concrete construction, mature condo boards, and full-time concierge are worth paying for.</p>
+          <div class="hood-stats">
+            <div class="hood-stats__item"><strong>$485K</strong><span>Median Condo</span></div>
+            <div class="hood-stats__item"><strong>$280K–$1.5M</strong><span>Range</span></div>
+            <div class="hood-stats__item"><strong>18</strong><span>Avg DOM</span></div>
+            <div class="hood-stats__item"><strong>5 min</strong><span>Downtown</span></div>
+          </div>
+          <div class="hood-block__best">
+            <span>Investors</span><span>Young Professionals</span><span>Empty Nesters</span><span>Pied-à-Terre</span>
+          </div>
+          <div class="hood-detail-list">
+            <div><h4>Key Buildings</h4><p>Park Point · The Guardian · Royal · Mark on 10th · Drake</p></div>
+            <div><h4>Lifestyle</h4><p>17th Ave SW · Cilantro · Model Milk · Phil &amp; Sebastian · MEC; Sunterra Market</p></div>
+            <div><h4>Transit</h4><p>10 min to anywhere downtown on foot. C-Train at 4 Street and 8 Street SW.</p></div>
+            <div><h4>Heads-up</h4><p>Verify condo reserve fund &amp; AGM minutes — building variance matters more than unit variance.</p></div>
+          </div>
+          <a href="listings.html" class="btn btn--gold">See Beltline Listings</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- TUSCANY -->
+  <article class="hood-block" id="tuscany">
+    <div class="container">
+      <div class="hood-block__grid">
+        <div class="hood-block__media reveal" style="--photo: url('https://picsum.photos/seed/lwk-hood-tuscany-deep/900/1100');">
+          <span class="hood-block__num">03</span>
+        </div>
+        <div class="reveal delay-1">
+          <span class="eyebrow">NW Calgary · Family Suburb</span>
+          <h2>Tuscany</h2>
+          <p class="vibe">Big lots, school catchments people fight over, and a Crowchild commute that still beats anything in Vancouver.</p>
+          <p>Tuscany is Calgary's quintessential family neighborhood. Built in the 1990s on a sweep of NW ridge land, it has held its value better than almost any comparable suburb thanks to the Tuscany Club, an active homeowners association, and walking access to the Crowchild C-Train station — rare for the deep northwest.</p>
+          <p>Best for first-time move-up buyers and growing families. Bungalows and two-storeys both available. Ridge homes with downtown / mountain sightlines command premiums.</p>
+          <div class="hood-stats">
+            <div class="hood-stats__item"><strong>$685K</strong><span>Median</span></div>
+            <div class="hood-stats__item"><strong>$520K–$1.1M</strong><span>Range</span></div>
+            <div class="hood-stats__item"><strong>21</strong><span>Avg DOM</span></div>
+            <div class="hood-stats__item"><strong>28 min</strong><span>Downtown</span></div>
+          </div>
+          <div class="hood-block__best">
+            <span>First-Time Buyers</span><span>Growing Families</span><span>Move-Up Buyers</span>
+          </div>
+          <div class="hood-detail-list">
+            <div><h4>Schools</h4><p>Tuscany School · Twelve Mile Coulee · St. Basil · Robert Thirsk High</p></div>
+            <div><h4>Lifestyle</h4><p>Tuscany Club · Crowfoot shops · Crowfoot YMCA · Twelve Mile Coulee trails</p></div>
+            <div><h4>Top Streets</h4><p>Tuscany Ridge Heights · Tuscany Hills · Tuscany Way · Royal Birch Mount</p></div>
+            <div><h4>Heads-up</h4><p>Older Tuscany homes (pre-2000) sometimes carry poly-B plumbing — always inspect.</p></div>
+          </div>
+          <a href="listings.html" class="btn btn--gold">See Tuscany Listings</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- MAHOGANY -->
+  <article class="hood-block" id="mahogany">
+    <div class="container">
+      <div class="hood-block__grid">
+        <div class="hood-block__media reveal" style="--photo: url('https://picsum.photos/seed/lwk-hood-mahogany-deep/900/1100');">
+          <span class="hood-block__num">04</span>
+        </div>
+        <div class="reveal delay-1">
+          <span class="eyebrow">SE Calgary · Lake Community</span>
+          <h2>Mahogany</h2>
+          <p class="vibe">Year-round lake access in a city that gets to −30°C. Calgary's most ambitious master-planned community, and it works.</p>
+          <p>Built by Hopewell on a 63-acre freshwater lake, Mahogany has redefined Calgary's family-suburb category since 2010. The Mahogany Beach Club is the marquee amenity — a private 22-acre park, beach, and ice rink open only to residents. Eight years from launch to selling out is record pace for Calgary.</p>
+          <p>The lake premium widens, not narrows, every year. Lake-facing homes command a 12–18% surcharge over identical interior comps. Resale depth is strong; new construction is still active in the surrounding pockets.</p>
+          <div class="hood-stats">
+            <div class="hood-stats__item"><strong>$795K</strong><span>Median</span></div>
+            <div class="hood-stats__item"><strong>$480K–$2.4M</strong><span>Range</span></div>
+            <div class="hood-stats__item"><strong>24</strong><span>Avg DOM</span></div>
+            <div class="hood-stats__item"><strong>32 min</strong><span>Downtown</span></div>
+          </div>
+          <div class="hood-block__best">
+            <span>Lake Lifestyle Families</span><span>Move-Up Buyers</span><span>Retirees</span>
+          </div>
+          <div class="hood-detail-list">
+            <div><h4>Schools</h4><p>Mahogany School · Divine Mercy · Joane Cardinal-Schubert High</p></div>
+            <div><h4>Lifestyle</h4><p>Mahogany Beach Club · Westman Village · Mahogany Lake · Seton shops</p></div>
+            <div><h4>Top Streets</h4><p>Mahogany Shore · Mahogany Island · Mahogany Manor · Marquis Heights</p></div>
+            <div><h4>Heads-up</h4><p>Annual lake club dues (~$300/yr) are mandatory and tied to title.</p></div>
+          </div>
+          <a href="listings.html" class="btn btn--gold">See Mahogany Listings</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- BRIDGELAND -->
+  <article class="hood-block" id="bridgeland">
+    <div class="container">
+      <div class="hood-block__grid">
+        <div class="hood-block__media reveal" style="--photo: url('https://picsum.photos/seed/lwk-hood-bridgeland-deep/900/1100');">
+          <span class="hood-block__num">05</span>
+        </div>
+        <div class="reveal delay-1">
+          <span class="eyebrow">Inner City NE · Reborn</span>
+          <h2>Bridgeland</h2>
+          <p class="vibe">Calgary's quietly most-desirable inner-city neighborhood. Walk to the office, bike the river, eat like you're in Lisbon.</p>
+          <p>Once a working-class Italian and Ukrainian enclave, Bridgeland has been reborn through a decade of careful infill. The 1st Avenue spine — OEB Breakfast, Lukes Drug Mart, Phil &amp; Sebastian, Una Pizza — is now one of Calgary's most-walked restaurant rows. The Bow River pathway is at the doorstep.</p>
+          <p>Mix of original 1920s cottages, mid-century apartments, and architect-designed 2010s infills. Rental yields are competitive with the Beltline; capital appreciation has been stronger.</p>
+          <div class="hood-stats">
+            <div class="hood-stats__item"><strong>$625K</strong><span>Median</span></div>
+            <div class="hood-stats__item"><strong>$420K–$1.4M</strong><span>Range</span></div>
+            <div class="hood-stats__item"><strong>16</strong><span>Avg DOM</span></div>
+            <div class="hood-stats__item"><strong>8 min</strong><span>Downtown</span></div>
+          </div>
+          <div class="hood-block__best">
+            <span>Young Professionals</span><span>Investors</span><span>Pet Owners</span><span>Walk-Score Lovers</span>
+          </div>
+          <div class="hood-detail-list">
+            <div><h4>Lifestyle</h4><p>OEB Breakfast · Una Pizza · Lukes Drug Mart · Sidewalk Citizen · Tom Campbell's Hill park</p></div>
+            <div><h4>Streets</h4><p>1st Ave NE · 9A Street NE · Drury Avenue · McDougall Road</p></div>
+            <div><h4>Schools</h4><p>Langevin · St. Angela · Crescent Heights High (catchment varies)</p></div>
+            <div><h4>Heads-up</h4><p>Some lots are clay-heavy and slope toward the river — foundation inspection essential.</p></div>
+          </div>
+          <a href="listings.html" class="btn btn--gold">See Bridgeland Listings</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- INGLEWOOD -->
+  <article class="hood-block" id="inglewood">
+    <div class="container">
+      <div class="hood-block__grid">
+        <div class="hood-block__media reveal" style="--photo: url('https://picsum.photos/seed/lwk-hood-inglewood-deep/900/1100');">
+          <span class="hood-block__num">06</span>
+        </div>
+        <div class="reveal delay-1">
+          <span class="eyebrow">Historic Inner City · Heritage</span>
+          <h2>Inglewood</h2>
+          <p class="vibe">Calgary's original main street, still pulling artists, restaurateurs, and architects three generations later.</p>
+          <p>Inglewood was Calgary's first neighborhood, settled in 1875. Today, 9th Avenue SE is the city's most cinematic stroll — vintage stores, brewpubs, vinyl shops, indie music venues, and ten-year-waitlist restaurants like Rouge.</p>
+          <p>Housing stock ranges from restored 1910s craftsmans to architect-designed modern infills. Heritage protection on parts of the avenue keeps the streetscape preserved. Bird sanctuary at the southern edge.</p>
+          <div class="hood-stats">
+            <div class="hood-stats__item"><strong>$795K</strong><span>Median</span></div>
+            <div class="hood-stats__item"><strong>$430K–$1.6M</strong><span>Range</span></div>
+            <div class="hood-stats__item"><strong>19</strong><span>Avg DOM</span></div>
+            <div class="hood-stats__item"><strong>10 min</strong><span>Downtown</span></div>
+          </div>
+          <div class="hood-block__best">
+            <span>Creative Professionals</span><span>Heritage Lovers</span><span>Empty Nesters</span>
+          </div>
+          <div class="hood-detail-list">
+            <div><h4>Lifestyle</h4><p>9th Ave SE shops · Rouge · Cold Garden Brewery · Pearl &amp; Sons · Bird Sanctuary trails</p></div>
+            <div><h4>Streets</h4><p>9th Avenue SE · 8th Avenue SE · 12th Street SE · 14A Street SE</p></div>
+            <div><h4>Schools</h4><p>Colonel Walker · Sacred Heart · Western Canada High (catchment varies)</p></div>
+            <div><h4>Heads-up</h4><p>Older homes may need electrical and foundation updates — budget contingency accordingly.</p></div>
+          </div>
+          <a href="listings.html" class="btn btn--gold">See Inglewood Listings</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ELBOW PARK -->
+  <article class="hood-block" id="elbow-park">
+    <div class="container">
+      <div class="hood-block__grid">
+        <div class="hood-block__media reveal" style="--photo: url('https://picsum.photos/seed/lwk-hood-elbow-park-deep/900/1100');">
+          <span class="hood-block__num">07</span>
+        </div>
+        <div class="reveal delay-1">
+          <span class="eyebrow">SW Calgary · Heritage Estate</span>
+          <h2>Elbow Park</h2>
+          <p class="vibe">Calgary's old money, still gracefully old money. Tudors, river paths, and a tennis club your grandfather joined.</p>
+          <p>Elbow Park is Calgary's most prestigious mature neighborhood — large lots, mature trees, and homes that have stayed in families for generations. The Elbow River pathway and Glencoe Club anchor the lifestyle. Restored 1910s estates trade for $2M–$5M; redevelopment lots fetch a million plus before construction starts.</p>
+          <p>Inventory is famously thin. Most homes sell off-market or through realtor networks. Kavin has placed buyers in 14 Elbow Park homes — only six of which were ever publicly listed.</p>
+          <div class="hood-stats">
+            <div class="hood-stats__item"><strong>$2.1M</strong><span>Median</span></div>
+            <div class="hood-stats__item"><strong>$1.2M–$8M</strong><span>Range</span></div>
+            <div class="hood-stats__item"><strong>34</strong><span>Avg DOM</span></div>
+            <div class="hood-stats__item"><strong>12 min</strong><span>Downtown</span></div>
+          </div>
+          <div class="hood-block__best">
+            <span>Established Families</span><span>Heritage Buyers</span><span>Generational Wealth</span>
+          </div>
+          <div class="hood-detail-list">
+            <div><h4>Streets</h4><p>Elbow Park Lane · Hillcrest Avenue · Riverdale Avenue · Sifton Boulevard</p></div>
+            <div><h4>Schools</h4><p>Elbow Park School · Western Canada High · Strathcona Tweedsmuir (private)</p></div>
+            <div><h4>Lifestyle</h4><p>Glencoe Club · Earl Grey Golf · Elbow River pathway · Stanley Park</p></div>
+            <div><h4>Heads-up</h4><p>2013 flood zone — verify post-flood mitigation and insurance availability before offer.</p></div>
+          </div>
+          <a href="listings.html" class="btn btn--gold">See Elbow Park Listings</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- WEST SPRINGS -->
+  <article class="hood-block" id="west-springs">
+    <div class="container">
+      <div class="hood-block__grid">
+        <div class="hood-block__media reveal" style="--photo: url('https://picsum.photos/seed/lwk-hood-west-springs-deep/900/1100');">
+          <span class="hood-block__num">08</span>
+        </div>
+        <div class="reveal delay-1">
+          <span class="eyebrow">SW Calgary · Top-Rated Schools</span>
+          <h2>West Springs</h2>
+          <p class="vibe">School catchments people relocate from other provinces for, and a Saturday morning Aspen Landing rhythm.</p>
+          <p>Built in the early 2000s on the western edge of Calgary, West Springs delivers what executive families travel across the country for: West Springs School, Olympic Heights, and a short commute to Webber Academy and Calgary Academy. Lots are bigger than newer southwest developments. Streets curve, the topography rolls.</p>
+          <p>Resale velocity is strong year-round; spring listings often sell in under three weeks. Bonus rooms, triple garages, and finished basements are standard.</p>
+          <div class="hood-stats">
+            <div class="hood-stats__item"><strong>$1.18M</strong><span>Median</span></div>
+            <div class="hood-stats__item"><strong>$780K–$2.5M</strong><span>Range</span></div>
+            <div class="hood-stats__item"><strong>20</strong><span>Avg DOM</span></div>
+            <div class="hood-stats__item"><strong>24 min</strong><span>Downtown</span></div>
+          </div>
+          <div class="hood-block__best">
+            <span>Executive Families</span><span>School Catchment Buyers</span><span>Move-Up Buyers</span>
+          </div>
+          <div class="hood-detail-list">
+            <div><h4>Schools</h4><p>West Springs School · Olympic Heights · Webber Academy (private) · Ernest Manning High</p></div>
+            <div><h4>Lifestyle</h4><p>Aspen Landing · Westside Rec · Edworthy Park · Bow River pathway</p></div>
+            <div><h4>Streets</h4><p>West Springs Terrace · West Coach Manor · West Cedar Place · West Glen Crescent</p></div>
+            <div><h4>Heads-up</h4><p>School catchments shift periodically — verify with CBE before assuming.</p></div>
+          </div>
+          <a href="listings.html" class="btn btn--gold">See West Springs Listings</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section class="section valuation-cta">
+    <div class="container valuation-cta__inner">
+      <div class="reveal">
+        <span class="eyebrow">Can't Decide?</span>
+        <h2>Kavin Will Help You <em>Pick the Right Calgary Neighborhood</em>.</h2>
+        <p>A 30-minute neighborhood-fit consultation — your priorities, your budget, your commute, your dealbreakers. Kavin shortlists three neighborhoods you should be looking at, and three you shouldn't.</p>
+        <a href="contact.html" class="btn btn--gold">Book a Neighborhood Consultation</a>
+      </div>
+      <div class="reveal delay-1" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:40px;color:rgba(255,255,255,.85);">
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.3rem;line-height:1.5;margin-bottom:18px;">"We were torn between Tuscany and West Springs for over a year. One coffee with Kavin and we knew. We've been in West Springs for three years and haven't questioned the call once."</div>
+        <div style="font-size:.85rem;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;font-weight:600;">— Andrew &amp; Sasha M., West Springs</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo"><span class="logo__mark">K</span><span class="logo__txt"><span>ListWithKavin</span><span>Calgary Real Estate</span></span></a>
+          <p style="margin-top:20px;max-width:300px;">Concierge real estate for Calgary buyers, sellers, and investors.</p>
+          <div class="footer-social"><a href="#">IG</a><a href="#">FB</a><a href="#">in</a><a href="#">YT</a></div>
+        </div>
+        <div><h4>Explore</h4><ul>
+          <li><a href="listings.html">All Listings</a></li>
+          <li><a href="neighborhoods.html">Neighborhoods</a></li>
+          <li><a href="buyers.html">For Buyers</a></li>
+          <li><a href="sellers.html">For Sellers</a></li>
+          <li><a href="about.html">About Kavin</a></li>
+          <li><a href="blog.html">Market Blog</a></li>
+        </ul></div>
+        <div><h4>Contact</h4><ul><li>403 555 8420</li><li>kavin@listwithkavin.ca</li><li>1240 — 8 Avenue SW<br/>Calgary, AB</li></ul></div>
+        <div class="footer-newsletter">
+          <h4>Monthly Calgary Briefing</h4>
+          <p style="margin-bottom:16px;">Market data, opportunities, Kavin's picks.</p>
+          <form data-mock><input type="email" placeholder="Your email" required /><button type="submit" class="btn btn--gold btn--block btn--sm">Subscribe</button></form>
+        </div>
+      </div>
+      <div class="footer-bottom"><div>© 2026 ListWithKavin.ca · CREB® Licensed Realtor</div><div><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></div></div>
+    </div>
+  </footer>
+
+  <div class="chatbot" id="chatbot">
+    <button class="chatbot__toggle" aria-label="Chat">💬</button>
+    <div class="chatbot__panel">
+      <div class="chatbot__head"><div class="chatbot__head__avatar">K</div><div><div class="chatbot__head__name">Kavin's AI Assistant</div><div class="chatbot__head__status">Typically replies instantly</div></div></div>
+      <div class="chatbot__body" id="chatBody"></div>
+      <div class="chat-options" id="chatOptions"></div>
+      <div class="chatbot__input"><input id="chatInput" type="text" placeholder="Ask me anything…" /><button id="chatSend">→</button></div>
+    </div>
+  </div>
+
+  <script src="listings.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

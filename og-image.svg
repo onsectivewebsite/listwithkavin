@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Social sharing preview (1200×630, Open Graph standard) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#FAF6EF"/>
+      <stop offset="60%"  stop-color="#F2EBDF"/>
+      <stop offset="100%" stop-color="#E8E0D2"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="80%" cy="30%" r="50%">
+      <stop offset="0%"   stop-color="#C9A84C" stop-opacity=".25"/>
+      <stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Decorative frame -->
+  <rect x="50" y="50" width="1100" height="530" fill="none" stroke="#C9A84C" stroke-width="2" opacity=".4"/>
+
+  <!-- K monogram badge -->
+  <circle cx="120" cy="130" r="42" fill="#FFFFFF" stroke="#C9A84C" stroke-width="2.5"/>
+  <text x="120" y="148" text-anchor="middle"
+        font-family="Georgia, serif" font-style="italic" font-weight="700"
+        font-size="54" fill="#8B6F3A">K</text>
+
+  <!-- Brand wordmark -->
+  <text x="180" y="120" font-family="Georgia, serif" font-weight="700" font-size="32" fill="#1A2940">ListWithKavin</text>
+  <text x="180" y="150" font-family="Arial, sans-serif" font-weight="500" font-size="14" letter-spacing="6" fill="#8B6F3A">CALGARY REAL ESTATE</text>
+
+  <!-- Headline -->
+  <text x="100" y="310" font-family="Georgia, serif" font-weight="700" font-size="80" fill="#1A2940">Sell Faster.</text>
+  <text x="100" y="395" font-family="Georgia, serif" font-weight="700" font-size="80" fill="#1A2940">Buy Smarter.</text>
+  <text x="100" y="480" font-family="Georgia, serif" font-style="italic" font-weight="400" font-size="80" fill="#8B6F3A">Live Beautifully.</text>
+
+  <!-- Footer accent -->
+  <line x1="100" y1="540" x2="200" y2="540" stroke="#C9A84C" stroke-width="2"/>
+  <text x="220" y="546" font-family="Arial, sans-serif" font-weight="600" font-size="16" letter-spacing="4" fill="#7A7466">CALGARY · ALBERTA</text>
+
+  <text x="1100" y="546" text-anchor="end" font-family="Arial, sans-serif" font-weight="600" font-size="14" letter-spacing="3" fill="#7A7466">LISTWITHKAVIN.CA</text>
+</svg>

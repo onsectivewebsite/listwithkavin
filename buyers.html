@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Buyer Resources — Calgary Homebuying Guide | ListWithKavin.ca</title>
+  <meta name="description" content="Step-by-step Calgary homebuying guide, mortgage calculator, neighborhood tools, and AI-personalized listings. First-time buyers, move-up buyers, and investors welcome." />
+  <meta property="og:title" content="Buyer Resources — ListWithKavin.ca" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <meta name="theme-color" content="#FAF6EF" />
+  <meta property="og:image" content="og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="og-image.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header is-solid">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo__mark">K</span>
+        <span class="logo__txt"><span>ListWithKavin</span><span>Calgary Real Estate</span></span>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="listings.html">Listings</a></li>
+        <li><a href="buyers.html">Buyers</a></li>
+        <li><a href="sellers.html">Sellers</a></li>
+        <li><a href="testimonials.html">Reviews</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav__cta">
+        <a href="sellers.html#valuation" class="btn btn--gold btn--sm">Get a Free Valuation</a>
+        <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="container page-head__inner">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Buyers</div>
+      <h1>Your Calgary Home Starts <em>Here</em>.</h1>
+      <p>From your first walk-through to your closing-day toast — a clear, calm, expertly-guided path to ownership.</p>
+    </div>
+  </section>
+
+  <!-- STEP-BY-STEP GUIDE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">The Calgary Buying Journey</span>
+        <h2>A <em>Clear Path</em> from Search to Keys</h2>
+        <p>Whether it's your first home or your fifth, the process is the same — patient, proven, and tailored to you.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><h3>Discovery Call</h3><p>A 20-minute chat to understand your goals, timing, must-haves, and dealbreakers. Zero pressure.</p></div>
+        <div class="step reveal delay-1"><h3>Mortgage Pre-Approval</h3><p>Kavin connects you with Calgary's best mortgage brokers — your budget, your rate, locked-in clarity.</p></div>
+        <div class="step reveal delay-2"><h3>Curated Showings</h3><p>AI-matched listings + Kavin's off-market network. Only the homes that fit your brief — never time-wasters.</p></div>
+        <div class="step reveal delay-3"><h3>Offer Strategy</h3><p>Data-driven offer pricing using Kavin's proprietary Calgary comparables. Win without overpaying.</p></div>
+        <div class="step reveal"><h3>Inspection &amp; Due Diligence</h3><p>Trusted Calgary inspectors. Kavin sits in on every walkthrough — and negotiates fixes hard.</p></div>
+        <div class="step reveal delay-1"><h3>Financing &amp; Legal</h3><p>White-glove handoff to your lawyer and lender. Kavin tracks every deadline so you don't have to.</p></div>
+        <div class="step reveal delay-2"><h3>Final Walkthrough</h3><p>Day-of-close walkthrough to confirm condition. Kavin's eye catches what others miss.</p></div>
+        <div class="step reveal delay-3"><h3>Keys in Hand</h3><p>Closing day celebration. And the start of Kavin's lifetime-client commitment — referrals, repairs, market updates.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MORTGAGE CALCULATOR -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Mortgage Tools</span>
+        <h2>What Will Your <em>Monthly Payment</em> Be?</h2>
+        <p>Live numbers update as you type — covering principal, interest, and total cost over the life of the loan.</p>
+      </div>
+
+      <div class="calculator reveal" id="mortgageCalc">
+        <div>
+          <div class="field-group">
+            <label for="mcPrice">Home Price</label>
+            <input id="mcPrice" type="number" value="750000" min="0" step="10000" />
+          </div>
+          <div class="field-row">
+            <div class="field-group">
+              <label for="mcDown">Down Payment</label>
+              <input id="mcDown" type="number" value="150000" min="0" step="5000" />
+            </div>
+            <div class="field-group">
+              <label for="mcRate">Interest Rate (%)</label>
+              <input id="mcRate" type="number" value="5.25" min="0" step="0.05" />
+            </div>
+          </div>
+          <div class="field-group">
+            <label for="mcYears">Amortization (Years)</label>
+            <select id="mcYears">
+              <option value="20">20 Years</option>
+              <option value="25" selected>25 Years</option>
+              <option value="30">30 Years</option>
+            </select>
+          </div>
+        </div>
+        <div class="calc-result">
+          <span class="calc-result__label">Estimated Monthly</span>
+          <div class="calc-result__amount" id="mcMonthly">$3,584</div>
+          <span class="calc-result__sub">Principal &amp; Interest</span>
+          <div class="calc-result__breakdown">
+            <div><span>Loan Principal</span><span id="mcPrincipal">$600,000</span></div>
+            <div><span>Total Interest</span><span id="mcInterest">$475,200</span></div>
+            <div><span>Total Cost</span><span id="mcTotal">$1,075,200</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEIGHBORHOOD COMPARISON -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Neighborhood Compass</span>
+        <h2>Find Your <em>Calgary Corner</em></h2>
+        <p>Compare median prices, schools, lifestyle, and commute — across Kavin's most-requested neighborhoods.</p>
+      </div>
+      <div style="overflow-x:auto;background:var(--white);border-radius:10px;box-shadow:var(--shadow-md);padding:8px;" class="reveal">
+        <table style="width:100%;border-collapse:collapse;min-width:720px;">
+          <thead>
+            <tr style="background:var(--navy);color:var(--white);">
+              <th style="text-align:left;padding:18px 20px;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;">Neighborhood</th>
+              <th style="padding:18px 20px;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;">Median Price</th>
+              <th style="padding:18px 20px;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;">Vibe</th>
+              <th style="padding:18px 20px;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;">Best For</th>
+              <th style="padding:18px 20px;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;">Commute</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #eee;"><td style="padding:18px 20px;font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);">Aspen Woods</td><td style="padding:18px 20px;text-align:center;">$1.4M</td><td style="padding:18px 20px;text-align:center;color:var(--muted);">Modern Luxury</td><td style="padding:18px 20px;text-align:center;color:var(--muted);">Executive Families</td><td style="padding:18px 20px;text-align:center;color:var(--muted);">22 min</td></tr>
+            <tr style="border-bottom:1px solid #eee;"><td style="padding:18px 20px;font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);">Beltline</td><td style="padding:18px 20px;text-align:center;">$485K</td><td style="padding:18px 20px;text-align:center;color:var(--muted);">Urban Cool</td><td style="padding:18px 20px;text-align:center;color:var(--muted);">Investors / Singles</td><td style="padding:18px 20px;text-align:center;color:var(--muted);">5 min</td></tr>
+            <tr style="border-bottom:1px solid #eee;"><td style="padding:18px 20px;font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);">Tuscany</td><td style="padding:18px 20px;text-align:center;">$685K</td><td style="padding:18px 20px;text-align:center;color:var(--muted);">Family Suburb</td><td style="padding:18px 20px;text-align:center;color:var(--muted);">First-Time Buyers</td><td style="padding:18px 20px;text-align:center;color:var(--muted);">28 min</td></tr>
+            <tr style="border-bottom:1px solid #eee;"><td style="padding:18px 20px;font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);">Mahogany</td><td style="padding:18px 20px;text-align:center;">$795K</td><td style="padding:18px 20px;text-align:center;color:var(--muted);">Lake Lifestyle</td><td style="padding:18px 20px;text-align:center;color:var(--muted);">Growing Families</td><td style="padding:18px 20px;text-align:center;color:var(--muted);">32 min</td></tr>
+            <tr style="border-bottom:1px solid #eee;"><td style="padding:18px 20px;font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);">Bridgeland</td><td style="padding:18px 20px;text-align:center;">$625K</td><td style="padding:18px 20px;text-align:center;color:var(--muted);">Inner-City Charm</td><td style="padding:18px 20px;text-align:center;color:var(--muted);">Young Professionals</td><td style="padding:18px 20px;text-align:center;color:var(--muted);">8 min</td></tr>
+            <tr><td style="padding:18px 20px;font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);">Elbow Park</td><td style="padding:18px 20px;text-align:center;">$2.1M</td><td style="padding:18px 20px;text-align:center;color:var(--muted);">Heritage Elite</td><td style="padding:18px 20px;text-align:center;color:var(--muted);">Established Families</td><td style="padding:18px 20px;text-align:center;color:var(--muted);">12 min</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI RECOMMENDATIONS -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">✦ AI-Personalized for You</span>
+        <h2>Homes You <em>Might Love</em></h2>
+        <p>Based on Calgary buyer profiles like yours — Kavin's algorithm surfaces three picks worth a closer look.</p>
+      </div>
+      <div class="listings-grid" id="recommendations"></div>
+      <div class="text-center reveal" style="margin-top:50px;">
+        <a href="listings.html" class="btn btn--navy">Browse All Calgary Listings</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIRST-TIME BUYER TIPS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">First-Time Buyer?</span>
+        <h2>The <em>Five Truths</em> Every First-Time Calgary Buyer Should Know</h2>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-card reveal"><div class="audience-card__num">01</div><h3>Pre-Approval First</h3><p>Never house-hunt without a pre-approval. It's leverage, clarity, and credibility — all in one.</p></div>
+        <div class="audience-card reveal delay-1"><div class="audience-card__num">02</div><h3>5% Down is Real</h3><p>Calgary qualifies for CMHC 5% down on homes under $500K. There are paths — Kavin will walk yours.</p></div>
+        <div class="audience-card reveal delay-2"><div class="audience-card__num">03</div><h3>Closing Costs Sting</h3><p>Budget 1.5–4% extra for legal, inspection, GST/PTT, and adjustments. We'll itemize it for you.</p></div>
+        <div class="audience-card reveal delay-3"><div class="audience-card__num">04</div><h3>Inspect, Always</h3><p>Calgary winters punish hidden defects. A $600 inspection has saved Kavin's clients $60K+ many times.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ ACCORDION -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Buyer FAQs</span>
+        <h2>You Asked. <em>Kavin Answered.</em></h2>
+      </div>
+      <div class="accordion reveal">
+        <div class="accordion__item">
+          <button class="accordion__btn">How much do I need for a down payment in Calgary?</button>
+          <div class="accordion__body"><p>For homes under $500,000, you can put as little as 5% down with CMHC insurance. Between $500K and $1M, it's 5% on the first $500K and 10% on the balance. Above $1M, you'll need 20% down minimum.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__btn">How long does it take to buy a home with Kavin?</button>
+          <div class="accordion__body"><p>From first conversation to keys in hand, most of Kavin's clients close within 6–10 weeks. Cash buyers and pre-approved buyers in a hot neighborhood sometimes move faster; complex luxury transactions take a little longer.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__btn">Do I pay Kavin a commission as a buyer?</button>
+          <div class="accordion__body"><p>In Calgary, buyer's agent commission is traditionally paid by the seller. You get Kavin's full representation, market expertise, and negotiation power at no direct cost. Exceptions exist (private sales, FSBO) — Kavin discusses them upfront, always.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__btn">What if I want to see a home not on your listings page?</button>
+          <div class="accordion__body"><p>That's how most of Kavin's buyers find their home. Send him the MLS link or address and he'll arrange a private showing — usually same-week. Off-market opportunities are also part of his network.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__btn">Can Kavin help out-of-province buyers?</button>
+          <div class="accordion__body"><p>Yes — a significant share of Kavin's clients relocate to Calgary from Vancouver, Toronto, and the US. Virtual tours, FaceTime walkthroughs, remote offers, and trusted on-the-ground partners make it seamless.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo">
+            <span class="logo__mark">K</span>
+            <span class="logo__txt"><span>ListWithKavin</span><span>Calgary Real Estate</span></span>
+          </a>
+          <p style="margin-top:20px;max-width:300px;">Concierge real estate for Calgary buyers, sellers, and investors.</p>
+          <div class="footer-social"><a href="#">IG</a><a href="#">FB</a><a href="#">in</a><a href="#">YT</a></div>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="listings.html">All Listings</a></li>
+            <li><a href="neighborhoods.html">Neighborhoods</a></li>
+            <li><a href="buyers.html">For Buyers</a></li>
+            <li><a href="sellers.html">For Sellers</a></li>
+            <li><a href="about.html">About Kavin</a></li>
+            <li><a href="blog.html">Market Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>403 555 8420</li>
+            <li>kavin@listwithkavin.ca</li>
+            <li>1240 — 8 Avenue SW<br/>Calgary, AB</li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Monthly Calgary Briefing</h4>
+          <p style="margin-bottom:16px;">Market data, opportunities, Kavin's picks.</p>
+          <form data-mock>
+            <input type="email" placeholder="Your email" required />
+            <button type="submit" class="btn btn--gold btn--block btn--sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 ListWithKavin.ca · CREB® Licensed Realtor</div>
+        <div><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CHATBOT + LIGHTBOX -->
+  <div class="chatbot" id="chatbot">
+    <button class="chatbot__toggle" aria-label="Chat">💬</button>
+    <div class="chatbot__panel">
+      <div class="chatbot__head"><div class="chatbot__head__avatar">K</div><div><div class="chatbot__head__name">Kavin's AI Assistant</div><div class="chatbot__head__status">Typically replies instantly</div></div></div>
+      <div class="chatbot__body" id="chatBody"></div>
+      <div class="chat-options" id="chatOptions"></div>
+      <div class="chatbot__input"><input id="chatInput" type="text" placeholder="Ask me anything…" /><button id="chatSend">→</button></div>
+    </div>
+  </div>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox__close" aria-label="Close">×</button>
+    <button class="lightbox__prev" aria-label="Previous">‹</button>
+    <button class="lightbox__next" aria-label="Next">›</button>
+    <div class="lightbox__stage">
+      <div class="lightbox__image" id="lbImage"></div>
+      <aside class="lightbox__details" id="lbDetails"></aside>
+    </div>
+    <div class="lightbox__counter" id="lbCounter"></div>
+    <div class="lightbox__thumbs" id="lbThumbs" style="position:absolute;bottom:60px;left:24px;right:50%;padding-right:20px;"></div>
+  </div>
+
+  <script src="listings.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

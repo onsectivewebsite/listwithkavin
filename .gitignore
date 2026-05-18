@@ -1,0 +1,35 @@
+# Local Claude Code workspace state
+.claude/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment (when you wire real backends — never commit secrets)
+.env
+.env.local
+.env.*.local
+
+# Node (in case tooling is ever added)
+node_modules/
+
+# Build artifacts
+dist/
+build/
+
+# Local server scratch
+.cache/

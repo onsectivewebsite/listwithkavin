@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sell Your Calgary Home — Free AI Valuation &amp; CMA | ListWithKavin.ca</title>
+  <meta name="description" content="Sell your Calgary home faster and for more. Get a free AI-powered valuation, request a full CMA, and learn Kavin's proven seller strategy." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <meta name="theme-color" content="#FAF6EF" />
+  <meta property="og:image" content="og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="og-image.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header is-solid">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo__mark">K</span>
+        <span class="logo__txt"><span>ListWithKavin</span><span>Calgary Real Estate</span></span>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="listings.html">Listings</a></li>
+        <li><a href="buyers.html">Buyers</a></li>
+        <li><a href="sellers.html">Sellers</a></li>
+        <li><a href="testimonials.html">Reviews</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav__cta">
+        <a href="#valuation" class="btn btn--gold btn--sm">Get a Free Valuation</a>
+        <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="container page-head__inner">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Sellers</div>
+      <h1>Sell Smarter. Sell <em>For More</em>.</h1>
+      <p>Kavin's clients sell 23% faster and net 4.8% more than the Calgary average. Here's how.</p>
+    </div>
+  </section>
+
+  <!-- VALUATION FORM -->
+  <section class="section valuation-cta" id="valuation">
+    <div class="container valuation-cta__inner">
+      <div class="reveal">
+        <span class="eyebrow">AI-Powered Home Valuation</span>
+        <h2>Your Calgary Home, <em>Priced Precisely.</em></h2>
+        <p>Kavin's AI valuation engine is trained on every comparable Calgary sale this year — including the off-market and pocket-listed ones MLS won't show you.</p>
+        <ul class="valuation-cta__feats">
+          <li>60-second instant range — no human follow-up unless you ask</li>
+          <li>Followed by a free, no-pressure CMA from Kavin himself</li>
+          <li>Used by 2,400+ Calgary homeowners last year</li>
+        </ul>
+      </div>
+
+      <form class="val-form reveal delay-1" id="sellerValForm" data-mock>
+        <div class="val-form__head">
+          <h3>Instant Home Value</h3>
+          <div class="val-form__steps"><span class="is-active"></span><span></span><span></span></div>
+        </div>
+        <div class="val-form__step is-active">
+          <div class="field-group">
+            <label for="sf1Addr">Property Address</label>
+            <input id="sf1Addr" name="address" type="text" required placeholder="142 Aspen Heights Drive SW" />
+          </div>
+          <div class="field-group">
+            <label for="sf1Type">Property Type</label>
+            <select id="sf1Type" name="type" required>
+              <option value="">Select…</option>
+              <option value="Detached">Detached</option>
+              <option value="Semi">Semi-Detached</option>
+              <option value="Townhouse">Townhouse</option>
+              <option value="Condo">Condo</option>
+            </select>
+          </div>
+          <div class="val-form__nav"><button type="button" class="btn btn--navy btn--block" data-next>Continue</button></div>
+        </div>
+        <div class="val-form__step">
+          <div class="field-row">
+            <div class="field-group"><label for="sf2Beds">Bedrooms</label><input id="sf2Beds" name="beds" type="number" min="1" required value="3" /></div>
+            <div class="field-group"><label for="sf2Baths">Bathrooms</label><input id="sf2Baths" name="baths" type="number" min="1" step="0.5" required value="2" /></div>
+          </div>
+          <div class="field-group"><label for="sf2Sqft">Square Footage</label><input id="sf2Sqft" name="sqft" type="number" required value="1800" /></div>
+          <div class="val-form__nav">
+            <button type="button" class="btn btn--ghost-dark" data-back>← Back</button>
+            <button type="button" class="btn btn--navy" data-next>Continue</button>
+          </div>
+        </div>
+        <div class="val-form__step">
+          <div class="field-group">
+            <label for="sf3Cond">Overall Condition</label>
+            <select id="sf3Cond" name="condition" required>
+              <option value="excellent">Excellent — recently renovated</option>
+              <option value="good" selected>Good — well maintained</option>
+              <option value="fair">Fair — needs some updates</option>
+              <option value="dated">Dated — needs renovation</option>
+            </select>
+          </div>
+          <div class="field-group"><label for="sf3Email">Email (for your full CMA)</label><input id="sf3Email" name="email" type="email" required placeholder="you@email.com" /></div>
+          <div class="val-form__nav">
+            <button type="button" class="btn btn--ghost-dark" data-back>← Back</button>
+            <button type="button" class="btn btn--gold" data-submit>Get My Estimate</button>
+          </div>
+        </div>
+        <div class="val-result"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- SELLER PROCESS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">The Listing Journey</span>
+        <h2>Kavin's <em>Seven-Step</em> Selling Method</h2>
+        <p>The same proven process — whether you're listing a Bridgeland infill or a $3M Elbow Park estate.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><h3>Strategy Session</h3><p>Coffee, conversation, candor. Kavin understands your timing, your goals, and your home — before any number is named.</p></div>
+        <div class="step reveal delay-1"><h3>AI-Backed Pricing</h3><p>The price isn't a guess — it's a model. Kavin's CMA blends 12,000+ comparables with real-time market velocity.</p></div>
+        <div class="step reveal delay-2"><h3>Staging &amp; Prep</h3><p>Trusted Calgary stagers, photographers, and contractors. Kavin's network turns "for sale" into "must-have."</p></div>
+        <div class="step reveal delay-3"><h3>Cinematic Marketing</h3><p>Drone, 3D tour, magazine-grade photography, paid social, MLS, and Kavin's private buyer database.</p></div>
+        <div class="step reveal"><h3>Showings &amp; Open Houses</h3><p>Curated, hosted, and ruthlessly tracked. Every visitor is qualified and followed up with by Kavin personally.</p></div>
+        <div class="step reveal delay-1"><h3>Offer Strategy</h3><p>Multi-offer playbooks, escalation clauses, and negotiation that consistently nets above-asking.</p></div>
+        <div class="step reveal delay-2"><h3>Closing &amp; Beyond</h3><p>From offer to keys, Kavin coordinates inspectors, lawyers, lenders. Then he sticks around — for life.</p></div>
+        <div class="step reveal delay-3"><h3>Post-Sale Care</h3><p>Annual home-value check-ins, contractor referrals, and your next move planned years in advance.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CMA REQUEST -->
+  <section class="section bg-light" id="cma">
+    <div class="container" style="max-width:760px;">
+      <div class="section-head reveal">
+        <span class="eyebrow">Free CMA Request</span>
+        <h2>Request Your <em>Comparative Market Analysis</em></h2>
+        <p>A 12-page, hand-built report from Kavin within 48 hours. Comps, photos, strategy, suggested price range — zero obligation.</p>
+      </div>
+
+      <form class="contact-form reveal" data-mock data-success="cmaSuccess">
+        <div class="field-row">
+          <div class="field-group"><label>Your Name</label><input name="name" type="text" required /></div>
+          <div class="field-group"><label>Phone</label><input name="phone" type="tel" required /></div>
+        </div>
+        <div class="field-row">
+          <div class="field-group"><label>Email</label><input name="email" type="email" required /></div>
+          <div class="field-group"><label>Timeline</label>
+            <select name="timeline" required>
+              <option value="">Select…</option>
+              <option>Within 30 days</option>
+              <option>1–3 months</option>
+              <option>3–6 months</option>
+              <option>Just curious</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-group"><label>Property Address</label><input name="address" type="text" required /></div>
+        <div class="field-group"><label>Anything Kavin should know about your home?</label><textarea name="message" placeholder="Recent renovations, features that make it special, target sale price…"></textarea></div>
+        <button class="btn btn--gold btn--block" type="submit">Send My CMA Request</button>
+      </form>
+
+      <div id="cmaSuccess" style="display:none;text-align:center;padding:60px 30px;background:var(--white);border-radius:10px;box-shadow:var(--shadow-md);">
+        <div style="font-size:3rem;color:var(--gold);margin-bottom:10px;">✦</div>
+        <h3 style="margin-bottom:14px;">Your CMA is on the way.</h3>
+        <p style="color:var(--muted);">Kavin will personally email your full Comparative Market Analysis within 48 hours. Watch for a confirmation text shortly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAGING + PRICING TIPS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Kavin's Playbook</span>
+        <h2>Six Calgary Seller <em>Truths</em> You Should Know</h2>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-card reveal"><div class="audience-card__num">01</div><h3>Price It Right Week One</h3><p>Calgary homes priced correctly sell 38% faster — and usually for more. Overpricing kills momentum.</p></div>
+        <div class="audience-card reveal delay-1"><div class="audience-card__num">02</div><h3>Stage. Always.</h3><p>Staged Calgary homes net 4–7% more than empty/lived-in equivalents. Kavin's stagers earn this back many times over.</p></div>
+        <div class="audience-card reveal delay-2"><div class="audience-card__num">03</div><h3>Pro Photos, Always</h3><p>91% of Calgary buyers start online. Kavin's listings use magazine-grade photography — and it's included.</p></div>
+        <div class="audience-card reveal delay-3"><div class="audience-card__num">04</div><h3>Calgary Has Seasons</h3><p>Spring lifts prices 3–5%, but motivated winter buyers exist year-round. Kavin times your launch to your goals.</p></div>
+        <div class="audience-card reveal"><div class="audience-card__num">05</div><h3>Small Fixes Pay Big</h3><p>Paint, lighting, hardware — $2,500 spent here often returns $20,000+ at sale. We'll itemize what matters.</p></div>
+        <div class="audience-card reveal delay-1"><div class="audience-card__num">06</div><h3>Disclose Everything</h3><p>Hiding a known defect risks the sale and a lawsuit. Kavin's transparent approach builds buyer trust — and offers.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Seller FAQs</span>
+        <h2>Your <em>Top Questions</em></h2>
+      </div>
+      <div class="accordion reveal">
+        <div class="accordion__item">
+          <button class="accordion__btn">What's your commission rate?</button>
+          <div class="accordion__body"><p>Kavin's listing fee is competitive with Calgary's top realtors and includes professional staging, photography, drone, 3D tour, paid marketing, and his proven negotiation. The exact rate depends on your home and strategy — discussed transparently in your strategy session.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__btn">How long will my home take to sell?</button>
+          <div class="accordion__body"><p>Kavin's average days-on-market is 18 days — vs. Calgary's market average of 32. Luxury homes and unique properties sometimes take longer; the right buyer for the right home is always worth the patience.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__btn">Should I sell or rent my Calgary home?</button>
+          <div class="accordion__body"><p>It depends on cash flow, capital gains, and your long-term plan. Kavin runs the math for free — including rental yield projections and 5- and 10-year scenarios — before any commitment.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__btn">What if my home doesn't sell?</button>
+          <div class="accordion__body"><p>It almost never happens — but if it does, you're never stuck. Kavin's contract includes flexible exit options. He'd rather rebuild trust than trap you in a listing.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__btn">Do you handle off-market / pocket listings?</button>
+          <div class="accordion__body"><p>Yes. For luxury and discretion-sensitive sellers, Kavin can quietly shop your home to a private buyer network before any public listing. Many Aspen Woods and Elbow Park sales happen this way.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER + CHATBOT + LIGHTBOX -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo"><span class="logo__mark">K</span><span class="logo__txt"><span>ListWithKavin</span><span>Calgary Real Estate</span></span></a>
+          <p style="margin-top:20px;max-width:300px;">Concierge real estate for Calgary buyers, sellers, and investors.</p>
+          <div class="footer-social"><a href="#">IG</a><a href="#">FB</a><a href="#">in</a><a href="#">YT</a></div>
+        </div>
+        <div><h4>Explore</h4><ul><li><a href="listings.html">All Listings</a></li><li><a href="neighborhoods.html">Neighborhoods</a></li><li><a href="buyers.html">For Buyers</a></li><li><a href="sellers.html">For Sellers</a></li><li><a href="about.html">About Kavin</a></li><li><a href="blog.html">Market Blog</a></li></ul></div>
+        <div><h4>Contact</h4><ul><li>403 555 8420</li><li>kavin@listwithkavin.ca</li><li>1240 — 8 Avenue SW<br/>Calgary, AB</li></ul></div>
+        <div class="footer-newsletter">
+          <h4>Monthly Calgary Briefing</h4>
+          <p style="margin-bottom:16px;">Market data, opportunities, Kavin's picks.</p>
+          <form data-mock><input type="email" placeholder="Your email" required /><button type="submit" class="btn btn--gold btn--block btn--sm">Subscribe</button></form>
+        </div>
+      </div>
+      <div class="footer-bottom"><div>© 2026 ListWithKavin.ca · CREB® Licensed Realtor</div><div><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></div></div>
+    </div>
+  </footer>
+
+  <div class="chatbot" id="chatbot">
+    <button class="chatbot__toggle" aria-label="Chat">💬</button>
+    <div class="chatbot__panel">
+      <div class="chatbot__head"><div class="chatbot__head__avatar">K</div><div><div class="chatbot__head__name">Kavin's AI Assistant</div><div class="chatbot__head__status">Typically replies instantly</div></div></div>
+      <div class="chatbot__body" id="chatBody"></div>
+      <div class="chat-options" id="chatOptions"></div>
+      <div class="chatbot__input"><input id="chatInput" type="text" placeholder="Ask me anything…" /><button id="chatSend">→</button></div>
+    </div>
+  </div>
+
+  <script src="listings.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

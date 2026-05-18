@@ -1,0 +1,40 @@
+# Netlify deploy config for ListWithKavin.ca
+# Drag-and-drop the project folder onto Netlify, or connect this repo and Netlify auto-detects.
+
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options       = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy        = "strict-origin-when-cross-origin"
+    Permissions-Policy     = "geolocation=(), microphone=(), camera=()"
+
+# Long-cache static assets (no hashes yet — bump query strings in HTML when updating)
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, immutable"
+
+[[redirects]]
+  from   = "/index"
+  to     = "/"
+  status = 301
+
+# Custom 404
+[[redirects]]
+  from   = "/*"
+  to     = "/404.html"
+  status = 404

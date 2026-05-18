@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calgary Property Listings — Browse Homes for Sale | ListWithKavin.ca</title>
+  <meta name="description" content="Browse Calgary homes for sale with intelligent AI filters: neighborhoods, beds, price, lifestyle tags, and AI Best-Match sort. Curated by Kavin." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <meta name="theme-color" content="#FAF6EF" />
+  <meta property="og:image" content="og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="og-image.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header is-solid">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo__mark">K</span>
+        <span class="logo__txt"><span>ListWithKavin</span><span>Calgary Real Estate</span></span>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="listings.html">Listings</a></li>
+        <li><a href="buyers.html">Buyers</a></li>
+        <li><a href="sellers.html">Sellers</a></li>
+        <li><a href="testimonials.html">Reviews</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav__cta">
+        <a href="sellers.html#valuation" class="btn btn--gold btn--sm">Get a Free Valuation</a>
+        <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="container page-head__inner">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Listings</div>
+      <h1>Calgary's <em>Finest Homes</em>, Curated.</h1>
+      <p>Hand-picked active listings from Bridgeland infills to Aspen Woods estates — each scored by Kavin's AI valuation engine.</p>
+    </div>
+  </section>
+
+  <!-- LISTINGS WITH SMART FILTERS -->
+  <section class="section">
+    <div class="container">
+      <div class="listings-layout">
+
+        <!-- FILTER SIDEBAR -->
+        <aside>
+          <form class="filters reveal" id="filterForm" aria-label="Smart filters">
+            <div class="filters__section">
+              <h4>Price Range</h4>
+              <div class="field-group">
+                <label for="maxPrice" style="display:flex;justify-content:space-between;">
+                  <span>Max Price</span><strong id="maxPriceOut" style="color:var(--gold);"></strong>
+                </label>
+                <input type="range" name="maxPrice" id="maxPrice" min="500000" max="3000000" step="50000" value="3000000" />
+              </div>
+              <div class="field-group">
+                <label for="minPrice">Min Price</label>
+                <input type="number" name="minPrice" id="minPrice" placeholder="No minimum" min="0" step="50000" />
+              </div>
+            </div>
+
+            <div class="filters__section">
+              <h4>Neighborhood</h4>
+              <div class="checkbox-list">
+                <label><input type="checkbox" name="hood" value="Aspen Woods" /> Aspen Woods</label>
+                <label><input type="checkbox" name="hood" value="Beltline" /> Beltline</label>
+                <label><input type="checkbox" name="hood" value="Tuscany" /> Tuscany</label>
+                <label><input type="checkbox" name="hood" value="Mahogany" /> Mahogany</label>
+                <label><input type="checkbox" name="hood" value="Bridgeland" /> Bridgeland</label>
+                <label><input type="checkbox" name="hood" value="Inglewood" /> Inglewood</label>
+                <label><input type="checkbox" name="hood" value="Elbow Park" /> Elbow Park</label>
+                <label><input type="checkbox" name="hood" value="West Springs" /> West Springs</label>
+              </div>
+            </div>
+
+            <div class="filters__section">
+              <h4>Property Type</h4>
+              <div class="checkbox-list">
+                <label><input type="checkbox" name="type" value="Detached" /> Detached</label>
+                <label><input type="checkbox" name="type" value="Condo" /> Condo</label>
+                <label><input type="checkbox" name="type" value="Townhouse" /> Townhouse</label>
+              </div>
+            </div>
+
+            <div class="filters__section">
+              <h4>Bedrooms</h4>
+              <div class="field-group">
+                <select name="beds">
+                  <option value="0">Any</option>
+                  <option value="1">1+</option>
+                  <option value="2">2+</option>
+                  <option value="3">3+</option>
+                  <option value="4">4+</option>
+                  <option value="5">5+</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="filters__section">
+              <h4>Lifestyle Tags</h4>
+              <div class="tag-list">
+                <label><input type="checkbox" name="tag" value="Near Schools" /><span>Near Schools</span></label>
+                <label><input type="checkbox" name="tag" value="Pet-Friendly" /><span>Pet-Friendly</span></label>
+                <label><input type="checkbox" name="tag" value="Investment Property" /><span>Investment Property</span></label>
+                <label><input type="checkbox" name="tag" value="Luxury" /><span>Luxury</span></label>
+              </div>
+            </div>
+
+            <button class="filters__sort" type="button" id="bestMatchSort">
+              <span class="label">Best Match for Me</span>
+            </button>
+          </form>
+        </aside>
+
+        <!-- LISTINGS GRID -->
+        <div>
+          <div class="listings-toolbar reveal">
+            <div class="listings-toolbar__count" id="listingCount"></div>
+            <div style="font-size:.8rem;color:var(--muted);">
+              <span style="color:var(--gold);font-weight:600;">✦</span>
+              All listings scored by Kavin's AI valuation engine
+            </div>
+          </div>
+          <div class="listings-grid" id="allListings"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section valuation-cta">
+    <div class="container valuation-cta__inner">
+      <div class="reveal">
+        <span class="eyebrow">Can't Find the Right Home?</span>
+        <h2>Let Kavin's Network <em>Find It For You.</em></h2>
+        <p>Many of Calgary's best homes never hit MLS. Kavin has access to off-market and pocket listings across every premium neighborhood — and a buyer network that gets first call.</p>
+        <a href="contact.html" class="btn btn--gold">Request a Private Search</a>
+      </div>
+      <div class="reveal delay-1" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:50px;color:rgba(255,255,255,.8);">
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.4rem;margin-bottom:18px;">"Kavin called us three days before our dream home hit MLS. We toured it Saturday, offered Sunday, won Monday."</div>
+        <div style="font-size:.85rem;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;">— D. &amp; L., West Springs</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo"><span class="logo__mark">K</span><span class="logo__txt"><span>ListWithKavin</span><span>Calgary Real Estate</span></span></a>
+          <p style="margin-top:20px;max-width:300px;">Concierge real estate for Calgary buyers, sellers, and investors.</p>
+          <div class="footer-social"><a href="#">IG</a><a href="#">FB</a><a href="#">in</a><a href="#">YT</a></div>
+        </div>
+        <div><h4>Explore</h4><ul><li><a href="listings.html">All Listings</a></li><li><a href="neighborhoods.html">Neighborhoods</a></li><li><a href="buyers.html">For Buyers</a></li><li><a href="sellers.html">For Sellers</a></li><li><a href="about.html">About Kavin</a></li><li><a href="blog.html">Market Blog</a></li></ul></div>
+        <div><h4>Contact</h4><ul><li>403 555 8420</li><li>kavin@listwithkavin.ca</li><li>1240 — 8 Avenue SW<br/>Calgary, AB</li></ul></div>
+        <div class="footer-newsletter">
+          <h4>Monthly Calgary Briefing</h4>
+          <p style="margin-bottom:16px;">Market data, opportunities, Kavin's picks.</p>
+          <form data-mock><input type="email" placeholder="Your email" required /><button type="submit" class="btn btn--gold btn--block btn--sm">Subscribe</button></form>
+        </div>
+      </div>
+      <div class="footer-bottom"><div>© 2026 ListWithKavin.ca · CREB® Licensed Realtor</div><div><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></div></div>
+    </div>
+  </footer>
+
+  <!-- CHATBOT -->
+  <div class="chatbot" id="chatbot">
+    <button class="chatbot__toggle" aria-label="Chat">💬</button>
+    <div class="chatbot__panel">
+      <div class="chatbot__head"><div class="chatbot__head__avatar">K</div><div><div class="chatbot__head__name">Kavin's AI Assistant</div><div class="chatbot__head__status">Typically replies instantly</div></div></div>
+      <div class="chatbot__body" id="chatBody"></div>
+      <div class="chat-options" id="chatOptions"></div>
+      <div class="chatbot__input"><input id="chatInput" type="text" placeholder="Ask me anything…" /><button id="chatSend">→</button></div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Property gallery">
+    <button class="lightbox__close" aria-label="Close gallery">×</button>
+    <button class="lightbox__prev" aria-label="Previous image">‹</button>
+    <button class="lightbox__next" aria-label="Next image">›</button>
+    <div class="lightbox__stage">
+      <div class="lightbox__image" id="lbImage"></div>
+      <aside class="lightbox__details" id="lbDetails"></aside>
+    </div>
+    <div class="lightbox__counter" id="lbCounter"></div>
+    <div class="lightbox__thumbs" id="lbThumbs" style="position:absolute;bottom:60px;left:24px;right:50%;padding-right:20px;"></div>
+  </div>
+
+  <script src="listings.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

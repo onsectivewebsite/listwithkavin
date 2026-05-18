@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ListWithKavin.ca — Calgary's Most Trusted Realtor | Luxury Homes &amp; Smart Buyers</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Kavin is Calgary's trusted real estate expert. Sell faster, buy smarter, and discover luxury homes in Aspen Woods, Mahogany, Elbow Park and more. Get a free AI home valuation." />
+  <meta name="keywords" content="Calgary real estate, Calgary realtor, luxury homes Calgary, Aspen Woods, Beltline condos, sell my home Calgary, ListWithKavin" />
+  <meta name="author" content="Kavin — ListWithKavin.ca" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ListWithKavin.ca — Calgary's Most Trusted Realtor" />
+  <meta property="og:description" content="Sell faster. Buy smarter. Discover your next Calgary home with Kavin." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://listwithkavin.ca/" />
+  <meta property="og:image" content="https://listwithkavin.ca/og-image.svg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ListWithKavin.ca — Calgary's Most Trusted Realtor" />
+  <meta name="twitter:description" content="Sell faster. Buy smarter. Discover your next Calgary home with Kavin." />
+
+  <!-- Favicon & icons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <meta name="theme-color" content="#FAF6EF" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER · Sticky nav with logo, links, and prominent CTA
+       ============================================================ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav">
+      <a href="index.html" class="logo" aria-label="ListWithKavin.ca home">
+        <span class="logo__mark">K</span>
+        <span class="logo__txt">
+          <span>ListWithKavin</span>
+          <span>Calgary Real Estate</span>
+        </span>
+      </a>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="listings.html">Listings</a></li>
+        <li><a href="buyers.html">Buyers</a></li>
+        <li><a href="sellers.html">Sellers</a></li>
+        <li><a href="testimonials.html">Reviews</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav__cta">
+        <a href="sellers.html#valuation" class="btn btn--gold btn--sm">Get a Free Valuation</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO · Editorial split layout, light theme
+       ============================================================ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__grid">
+
+        <!-- LEFT · copy -->
+        <div class="hero__copy">
+          <span class="eyebrow reveal">Calgary's Premier Real Estate Brand</span>
+          <h1 class="reveal delay-1">
+            Sell Faster.<br />
+            Buy Smarter.<br />
+            <em>Live Beautifully</em> in&nbsp;Calgary.
+          </h1>
+          <p class="hero__lead reveal delay-2">
+            From first-time buyers in Tuscany to luxury estates in Elbow Park &mdash;
+            Kavin delivers concierge service, AI-powered insight, and a network that
+            moves Calgary homes 23% faster than the city average.
+          </p>
+
+          <div class="hero__cta reveal delay-3">
+            <a href="listings.html" class="btn btn--gold">Browse Calgary Homes</a>
+            <a href="sellers.html#valuation" class="btn btn--ghost">Get a Free Valuation</a>
+          </div>
+
+          <div class="hero__signals reveal delay-4">
+            <div class="hero__signal"><strong>650+</strong><span>Homes Sold</span></div>
+            <div class="hero__signal"><strong>$420M</strong><span>In Sales</span></div>
+            <div class="hero__signal"><strong>4.9★</strong><span>650+ Reviews</span></div>
+            <div class="hero__signal"><strong>14 yrs</strong><span>Calgary Local</span></div>
+          </div>
+        </div>
+
+        <!-- RIGHT · featured listing showcase
+             To swap the photo: change the seed in the URL below or replace with any image URL.
+             See README → "Wiring real photos". -->
+        <div class="hero__feature hero__feature--photo reveal delay-2"
+             style="--photo: url('https://picsum.photos/seed/lwk-hero-aspen/900/1100');"
+             aria-label="Featured listing showcase">
+          <span class="hero__feature__badge">✦ Featured</span>
+          <span class="hero__feature__label">Just Listed</span>
+          <div class="hero__feature__body">
+            <div class="hero__feature__hood">Aspen Woods · SW Calgary</div>
+            <div class="hero__feature__addr">2418 Aspen Heights Drive</div>
+            <div class="hero__feature__price">$1,895,000</div>
+            <div class="hero__feature__meta">
+              <span><strong>5</strong> Beds</span>
+              <span><strong>4.5</strong> Baths</span>
+              <span><strong>4,280</strong> SqFt</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick search bar -->
+      <form class="quick-search reveal delay-4" id="quickSearchForm" aria-label="Quick property search">
+        <div class="field">
+          <label for="qsHood">Neighborhood</label>
+          <select id="qsHood" name="hood">
+            <option value="">All Calgary</option>
+            <option>Aspen Woods</option>
+            <option>Beltline</option>
+            <option>Tuscany</option>
+            <option>Mahogany</option>
+            <option>Bridgeland</option>
+            <option>Inglewood</option>
+            <option>Elbow Park</option>
+            <option>West Springs</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="qsType">Property Type</label>
+          <select id="qsType" name="type">
+            <option value="">Any</option>
+            <option>Detached</option>
+            <option>Condo</option>
+            <option>Townhouse</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="qsBeds">Beds</label>
+          <select id="qsBeds" name="beds">
+            <option value="0">Any</option>
+            <option>1+</option><option>2+</option><option>3+</option><option>4+</option><option>5+</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="qsPrice">Max Price</label>
+          <select id="qsPrice" name="price">
+            <option value="">Any</option>
+            <option>$500K</option><option>$750K</option><option>$1M</option>
+            <option>$1.5M</option><option>$2M+</option>
+          </select>
+        </div>
+        <button class="btn btn--navy" type="submit">Search Homes</button>
+      </form>
+
+      <a href="#featured" class="scroll-cue">Discover the Listings</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FEATURED LISTINGS
+       ============================================================ -->
+  <section class="section" id="featured">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Hand-Picked by Kavin</span>
+        <h2>Featured Calgary <em>Homes</em></h2>
+        <p>A curated selection of Kavin's most distinguished current listings — from inner-city showpieces to estate-class family homes.</p>
+      </div>
+
+      <div class="listings-grid" id="featuredListings">
+        <!-- Cards injected by main.js -->
+      </div>
+
+      <div class="text-center reveal" style="margin-top:50px;">
+        <a href="listings.html" class="btn btn--ghost-dark">See All Listings →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT / TRUST BLOCK
+       ============================================================ -->
+  <section class="section bg-light">
+    <div class="container about-block">
+      <div class="about-block__media reveal"
+           style="--photo: url('https://picsum.photos/seed/lwk-kavin-portrait/800/1000');">
+        <div class="photo-placeholder">Professional Portrait · Kavin</div>
+      </div>
+      <div class="reveal delay-1">
+        <span class="eyebrow">About Kavin</span>
+        <h2>Calgary's <em>Trusted Voice</em> in Real Estate.</h2>
+        <p>
+          For over a decade, Kavin has guided Calgary families, executives, and investors through some of the most consequential decisions of their lives. From the first-time buyer in Bridgeland to the discerning luxury family in Aspen Woods, his promise is the same: honest counsel, white-glove execution, and outcomes that exceed expectations.
+        </p>
+        <p>
+          Backed by proprietary AI market modeling and a relentless commitment to craft, Kavin's clients move 23% faster and net 4.8% more on average than the Calgary market.
+        </p>
+        <div class="trust-row">
+          <div class="trust-row__item"><strong>Top 1%</strong>Calgary Realtors</div>
+          <div class="trust-row__item"><strong>4.9★</strong>650+ Reviews</div>
+          <div class="trust-row__item"><strong>23%</strong>Faster Sale Time</div>
+        </div>
+        <a href="about.html" class="btn btn--navy">Meet Kavin</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       AUDIENCE GRID · 4 buyer personas
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Who Kavin Serves</span>
+        <h2>Tailored Service for Every <em>Calgary Journey</em></h2>
+        <p>Whether you're stepping into your first home or unlocking the value of your sixth, Kavin's approach is built around <em>you</em>.</p>
+      </div>
+
+      <div class="audience-grid">
+        <div class="audience-card reveal">
+          <div class="audience-card__num">01</div>
+          <h3>First-Time Buyers</h3>
+          <p>A patient, educational hand through your biggest financial decision — with mortgage clarity, neighborhood guidance, and zero pressure.</p>
+          <a href="buyers.html">Start the Journey</a>
+        </div>
+        <div class="audience-card reveal delay-1">
+          <div class="audience-card__num">02</div>
+          <h3>Luxury Buyers</h3>
+          <p>Concierge access to Calgary's finest estates in Aspen Woods, West Springs, and Elbow Park. Discreet, exclusive, exquisite.</p>
+          <a href="listings.html">View Estates</a>
+        </div>
+        <div class="audience-card reveal delay-2">
+          <div class="audience-card__num">03</div>
+          <h3>Investors</h3>
+          <p>Data-driven ROI analysis, rental yield projections, and off-market access. Calgary's strongest cap rates, identified by AI.</p>
+          <a href="listings.html">See Investor Picks</a>
+        </div>
+        <div class="audience-card reveal delay-3">
+          <div class="audience-card__num">04</div>
+          <h3>Home Sellers</h3>
+          <p>Sell faster, sell smarter. Top-dollar marketing, AI-powered pricing, and a buyer network that closes 23% above the city average.</p>
+          <a href="sellers.html">List with Kavin</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       AI VALUATION CTA
+       ============================================================ -->
+  <section class="section valuation-cta" id="valuation">
+    <div class="container valuation-cta__inner">
+      <div class="reveal">
+        <span class="eyebrow">AI-Powered Home Valuation</span>
+        <h2>What Is Your Calgary Home <em>Worth Today?</em></h2>
+        <p>
+          Get a precision-tuned valuation in 60 seconds, powered by AI trained on every comparable Calgary sale this year. No phone tag. No commitment. Just a number you can trust.
+        </p>
+        <ul class="valuation-cta__feats">
+          <li>Trained on 12,000+ Calgary comparable sales</li>
+          <li>Live market velocity &amp; days-on-market signals</li>
+          <li>Followed by a free, no-obligation CMA from Kavin</li>
+        </ul>
+      </div>
+
+      <!-- Multi-step valuation form -->
+      <form class="val-form reveal delay-1" id="homeValForm" data-mock>
+        <div class="val-form__head">
+          <h3>Instant Home Value</h3>
+          <div class="val-form__steps">
+            <span class="is-active"></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="val-form__step is-active">
+          <div class="field-group">
+            <label for="vf1Addr">Property Address</label>
+            <input id="vf1Addr" name="address" type="text" required placeholder="e.g. 142 Aspen Heights Drive SW" />
+          </div>
+          <div class="field-group">
+            <label for="vf1Type">Property Type</label>
+            <select id="vf1Type" name="type" required>
+              <option value="">Select…</option>
+              <option value="Detached">Detached</option>
+              <option value="Semi">Semi-Detached</option>
+              <option value="Townhouse">Townhouse</option>
+              <option value="Condo">Condo</option>
+            </select>
+          </div>
+          <div class="val-form__nav">
+            <button type="button" class="btn btn--navy btn--block" data-next>Continue</button>
+          </div>
+        </div>
+
+        <div class="val-form__step">
+          <div class="field-row">
+            <div class="field-group">
+              <label for="vf2Beds">Bedrooms</label>
+              <input id="vf2Beds" name="beds" type="number" min="1" required value="3" />
+            </div>
+            <div class="field-group">
+              <label for="vf2Baths">Bathrooms</label>
+              <input id="vf2Baths" name="baths" type="number" min="1" step="0.5" required value="2" />
+            </div>
+          </div>
+          <div class="field-group">
+            <label for="vf2Sqft">Square Footage</label>
+            <input id="vf2Sqft" name="sqft" type="number" min="200" required value="1800" />
+          </div>
+          <div class="val-form__nav">
+            <button type="button" class="btn btn--ghost-dark" data-back>← Back</button>
+            <button type="button" class="btn btn--navy" data-next>Continue</button>
+          </div>
+        </div>
+
+        <div class="val-form__step">
+          <div class="field-group">
+            <label for="vf3Cond">Overall Condition</label>
+            <select id="vf3Cond" name="condition" required>
+              <option value="excellent">Excellent — recently renovated</option>
+              <option value="good" selected>Good — well maintained</option>
+              <option value="fair">Fair — needs some updates</option>
+              <option value="dated">Dated — needs renovation</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="vf3Email">Email (for your full CMA)</label>
+            <input id="vf3Email" name="email" type="email" required placeholder="you@email.com" />
+          </div>
+          <div class="val-form__nav">
+            <button type="button" class="btn btn--ghost-dark" data-back>← Back</button>
+            <button type="button" class="btn btn--gold" data-submit>Get My Estimate</button>
+          </div>
+        </div>
+
+        <div class="val-result"><!-- result injected --></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       NEIGHBORHOODS
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Calgary Neighborhoods</span>
+        <h2>Where Will <em>Calgary Take You</em>?</h2>
+      </div>
+      <div class="hoods-grid">
+        <a href="neighborhoods.html#aspen-woods" class="hood-card reveal" style="--photo: url('https://picsum.photos/seed/lwk-hood-aspen/700/900');"><div class="hood-card__bg"></div><div class="hood-card__body"><span>Luxury Estates</span><h3>Aspen Woods</h3></div></a>
+        <a href="neighborhoods.html#beltline" class="hood-card reveal delay-1" style="--photo: url('https://picsum.photos/seed/lwk-hood-beltline/700/900');"><div class="hood-card__bg"></div><div class="hood-card__body"><span>Urban Condos</span><h3>Beltline</h3></div></a>
+        <a href="neighborhoods.html#mahogany" class="hood-card reveal delay-2" style="--photo: url('https://picsum.photos/seed/lwk-hood-mahogany/700/900');"><div class="hood-card__bg"></div><div class="hood-card__body"><span>Lake Community</span><h3>Mahogany</h3></div></a>
+        <a href="neighborhoods.html#inglewood" class="hood-card reveal delay-3" style="--photo: url('https://picsum.photos/seed/lwk-hood-inglewood/700/900');"><div class="hood-card__bg"></div><div class="hood-card__body"><span>Heritage Charm</span><h3>Inglewood</h3></div></a>
+      </div>
+      <div class="text-center reveal" style="margin-top:50px;">
+        <a href="neighborhoods.html" class="btn btn--ghost-dark">Explore All 8 Neighborhoods →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIALS PREVIEW
+       ============================================================ -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Calgary Loves Kavin</span>
+        <h2>Voices from <em>Real Calgarians</em></h2>
+      </div>
+      <div class="testi-grid">
+        <article class="testi-card reveal">
+          <div class="testi-card__stars">★★★★★</div>
+          <p class="testi-card__quote">Kavin sold our Aspen Woods home in 11 days — $48,000 over asking. His marketing was on another level.</p>
+          <div class="testi-card__meta">
+            <div class="testi-card__avatar">SM</div>
+            <div><div class="testi-card__name">Sarah &amp; Mark T.</div><div class="testi-card__loc">Aspen Woods</div></div>
+          </div>
+        </article>
+        <article class="testi-card reveal delay-1">
+          <div class="testi-card__stars">★★★★★</div>
+          <p class="testi-card__quote">As first-time buyers, we were terrified. Kavin walked us through every step. We closed on our Tuscany dream home.</p>
+          <div class="testi-card__meta">
+            <div class="testi-card__avatar">JL</div>
+            <div><div class="testi-card__name">Jenna L.</div><div class="testi-card__loc">Tuscany</div></div>
+          </div>
+        </article>
+        <article class="testi-card reveal delay-2">
+          <div class="testi-card__stars">★★★★★</div>
+          <p class="testi-card__quote">Three investment condos in the Beltline — all with positive cash flow from day one. Kavin understands ROI.</p>
+          <div class="testi-card__meta">
+            <div class="testi-card__avatar">RP</div>
+            <div><div class="testi-card__name">Rohan P.</div><div class="testi-card__loc">Investor · Beltline</div></div>
+          </div>
+        </article>
+      </div>
+      <div class="text-center reveal" style="margin-top:50px;">
+        <a href="testimonials.html" class="btn btn--ghost-dark">Read All Reviews →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom:20px;">
+            <span class="logo__mark">K</span>
+            <span class="logo__txt"><span>ListWithKavin</span><span>Calgary Real Estate</span></span>
+          </a>
+          <p style="margin-top:20px;max-width:300px;">Concierge real estate for Calgary buyers, sellers, and investors. Backed by AI insight and 14 years of local mastery.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="Facebook">FB</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="YouTube">YT</a>
+          </div>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="listings.html">All Listings</a></li>
+            <li><a href="neighborhoods.html">Neighborhoods</a></li>
+            <li><a href="buyers.html">For Buyers</a></li>
+            <li><a href="sellers.html">For Sellers</a></li>
+            <li><a href="about.html">About Kavin</a></li>
+            <li><a href="blog.html">Market Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>403 555 8420</li>
+            <li>kavin@listwithkavin.ca</li>
+            <li>1240 — 8 Avenue SW<br/>Calgary, AB T2P 1B2</li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Monthly Calgary Briefing</h4>
+          <p style="margin-bottom:16px;">Market data, off-market opportunities, and Kavin's neighborhood picks — first Tuesday of every month.</p>
+          <form data-mock>
+            <input type="email" placeholder="Your email" required />
+            <button type="submit" class="btn btn--gold btn--block btn--sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 ListWithKavin.ca · CREB® Licensed Realtor · All Rights Reserved</div>
+        <div><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       CHATBOT
+       ============================================================ -->
+  <div class="chatbot" id="chatbot">
+    <button class="chatbot__toggle" aria-label="Chat with Kavin's AI assistant">💬</button>
+    <div class="chatbot__panel" role="dialog" aria-label="Kavin chatbot">
+      <div class="chatbot__head">
+        <div class="chatbot__head__avatar">K</div>
+        <div>
+          <div class="chatbot__head__name">Kavin's AI Assistant</div>
+          <div class="chatbot__head__status">Typically replies instantly</div>
+        </div>
+      </div>
+      <div class="chatbot__body" id="chatBody"></div>
+      <div class="chat-options" id="chatOptions"></div>
+      <div class="chatbot__input">
+        <input id="chatInput" type="text" placeholder="Ask me anything…" aria-label="Type your message" />
+        <button id="chatSend" aria-label="Send">→</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       LIGHTBOX
+       ============================================================ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Property gallery">
+    <button class="lightbox__close" aria-label="Close gallery">×</button>
+    <button class="lightbox__prev" aria-label="Previous image">‹</button>
+    <button class="lightbox__next" aria-label="Next image">›</button>
+    <div class="lightbox__stage">
+      <div class="lightbox__image" id="lbImage"></div>
+      <aside class="lightbox__details" id="lbDetails"></aside>
+    </div>
+    <div class="lightbox__counter" id="lbCounter"></div>
+    <div class="lightbox__thumbs" id="lbThumbs" style="position:absolute;bottom:60px;left:24px;right:50%;padding-right:20px;"></div>
+  </div>
+
+  <!-- ============================================================
+       NEWSLETTER POPUP
+       ============================================================ -->
+  <aside class="newsletter-popup" id="newsletterPopup" role="dialog" aria-label="Newsletter signup">
+    <button class="newsletter-popup__close" aria-label="Close">×</button>
+    <h4>Calgary's Best-Kept Real Estate Secret</h4>
+    <p>Join 2,400+ Calgarians getting Kavin's monthly market briefing — off-market listings, price trends, and neighborhood picks.</p>
+    <form data-mock>
+      <input type="email" placeholder="Your email" required />
+      <button type="submit" class="btn btn--gold btn--sm">Join</button>
+    </form>
+  </aside>
+
+  <script src="listings.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
